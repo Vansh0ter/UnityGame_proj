@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Main
 {
@@ -25,9 +24,6 @@ namespace Main
         [SerializeField] float timeToRunning = 2.0f;
         [HideInInspector] public bool canMove = true;
         [HideInInspector] public bool CanRunning = true;
-
-        [SerializeField] private int coins;
-        [SerializeField] private Text coinsText;
 
         [Space(20)]
         [Header("Input")]
@@ -126,15 +122,6 @@ namespace Main
                     characterController.height = Height;
                     WalkingValue = Mathf.Lerp(WalkingValue, walkingSpeed, 4 * Time.deltaTime);
                 }
-            }
-        }
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.gameObject.tag == "Coin")
-            {
-                coins++;
-                coinsText.text = coins.ToString();
-                Destroy(other.gameObject);
             }
         }
     }
