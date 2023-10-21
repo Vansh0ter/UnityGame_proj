@@ -27,9 +27,9 @@ public class PlayerMove : MonoBehaviour
 
     private void DefaultMovement()
     {
-        if (_controller.isGrounded)
+        if (_controller.isGrounded) //is.Grounded func is already assigned by Unity
         {
-            Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")); // player movemnet horizontal or vertical(everything is already assigned by Unity)
 
             if (input.x != 0 && input.y != 0)
             {
@@ -42,18 +42,18 @@ public class PlayerMove : MonoBehaviour
 
             _moveDirection = transform.TransformDirection(_moveDirection);
 
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space)) // jump init
             {
                 Jump();
             }
         }
-        else
+        else // simple gravity init 
         {
             _moveDirection.y -= _settings.gravity * Time.deltaTime;
         }
     }
 
-    private void Jump()
+    private void Jump() // simple jump code
     {
         _moveDirection.y += _settings.jumpForce;
     }
