@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Scriptable_Objects/Movement/Settings")]
+[CreateAssetMenu(menuName = "Scriptable_Objects/Movement/Settings")] // makes an easy way to manipulate movement settings, without getting into code.
 public class MoveSettings : ScriptableObject
 {
     public float speed { get { return _speed; } private set { _speed = value; } }
