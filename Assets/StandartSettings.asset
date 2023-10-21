@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c59db7dc28cbce84a91ec427bf09dd2a, type: 3}
   m_Name: StandartSettings
   m_EditorClassIdentifier: 
-  _speed: 5
-  _jumpForce: 15
+  _speed: 10
+  _sit: 5
+  _sprint: 20
+  _jumpForce: 20
   _antiBump: 4.5
   _gravity: 30

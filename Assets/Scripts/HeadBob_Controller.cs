@@ -58,4 +58,5 @@ public class Headbob : MonoBehaviour
         if (_camera.localPosition == _startPos) return;
         _camera.localPosition = Vector3.Lerp(_camera.localPosition, _startPos, 1 * Time.deltaTime);
     }
+
 }
