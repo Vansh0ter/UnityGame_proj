@@ -26,15 +26,6 @@ namespace Main
         [HideInInspector] public bool CanRunning = true;
 
         [Space(20)]
-        [Header("Climbing")]
-        [SerializeField] bool CanClimbing = true;
-        [SerializeField, Range(1, 25)] float Speed = 2f;
-        bool isClimbing = false;
-
-        [Space(20)]
-        [Header("HandsHide")]
-
-        [Space(20)]
         [Header("Input")]
         [SerializeField] KeyCode CroughKey = KeyCode.LeftControl;
 
@@ -75,7 +66,7 @@ namespace Main
         {
             RaycastHit CroughCheck;
 
-            if (!characterController.isGrounded && !isClimbing)
+            if (!characterController.isGrounded)
             {
                 moveDirection.y -= gravity * Time.deltaTime;
             }
@@ -89,7 +80,7 @@ namespace Main
             float movementDirectionY = moveDirection.y;
             moveDirection = (forward * vertical) + (right * horizontal);
 
-            if (Input.GetButton("Jump") && canMove && characterController.isGrounded && !isClimbing)
+            if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
             {
                 moveDirection.y = jumpSpeed;
             }
@@ -133,32 +124,5 @@ namespace Main
                 }
             }
         }
-
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.tag == "Ladder" && CanClimbing)
-            { 
-                CanRunning = false;
-                isClimbing = true;
-                WalkingValue /= 2;
-            }
-        }
-        private void OnTriggerStay(Collider other)
-        {
-            if (other.tag == "Ladder" && CanClimbing)
-            {
-                moveDirection = new Vector3(0, Input.GetAxis("Vertical") * Speed * (-Camera.localRotation.x / 1.7f), 0);
-            }
-        }
-        private void OnTriggerExit(Collider other)
-        {
-            if (other.tag == "Ladder" && CanClimbing)
-            {
-                CanRunning = true;
-                isClimbing = false;
-                WalkingValue *= 2;
-            }
-        }
-
     }
 }
