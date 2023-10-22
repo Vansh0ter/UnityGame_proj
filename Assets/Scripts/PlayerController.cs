@@ -31,7 +31,7 @@ namespace Main
 
         [Space(20)]
         [Header("Input")]
-        [SerializeField] KeyCode CrouchKey = KeyCode.LeftControl;
+        [SerializeField] KeyCode CroughKey = KeyCode.LeftControl;
 
 
         [HideInInspector] public CharacterController characterController;
@@ -77,7 +77,7 @@ namespace Main
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             Vector3 right = transform.TransformDirection(Vector3.right);
 
-            isRunning = !isCrough && (CanRunning && Input.GetKey(KeyCode.LeftShift));
+            isRunning = !isCrough ? CanRunning ? Input.GetKey(KeyCode.LeftShift) : false : false;
 
             vertical = canMove ? (isRunning ? RunningValue : WalkingValue) * Input.GetAxis("Vertical") : 0;
             horizontal = canMove ? (isRunning ? RunningValue : WalkingValue) * Input.GetAxis("Horizontal") : 0;
@@ -85,6 +85,7 @@ namespace Main
             else RunningValue = WalkingValue;
             float movementDirectionY = moveDirection.y;
             moveDirection = (forward * vertical) + (right * horizontal);
+
             if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
             {
                 moveDirection.y = jumpSpeed;
@@ -110,7 +111,7 @@ namespace Main
                 else cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, InstallFOV, SpeedToFOV * Time.deltaTime);
             }
 
-            if (Input.GetKey(CrouchKey))
+            if (Input.GetKey(CroughKey))
             {
                 isCrough = true;
                 float Height = Mathf.Lerp(characterController.height, CroughHeight, 5 * Time.deltaTime);
