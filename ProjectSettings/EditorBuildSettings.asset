@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/EvolveGames/RealisticFPSController/Scenes/DemoScene.unity
     guid: ab0b46e2e44b5d14f99aff193b77d1c2
   m_configObjects: {}

@@ -1,6 +1,3 @@
-# UnityGame_proj
-Just a simple game on Unity. 
-
 ## Contributing
 
 We welcome contributions from anyone who is interested in helping improve our game. If you'd like to contribute, there are a few ways to get involved:
@@ -11,9 +8,3 @@ We welcome contributions from anyone who is interested in helping improve our ga
 5. run the game
 6. Optional(Build the game)
 7. Make a pull request
-   
-## Contributors
-
-<a href="https://github.com/Vansh0ter/UnityGame_proj/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Vansh0ter/UnityGame_proj" />
-</a>
