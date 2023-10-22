@@ -29,6 +29,7 @@ namespace Main
         [SerializeField] private Text coinsText;
 
 
+
         [Space(20)]
         [Header("Input")]
         [SerializeField] KeyCode CrouchKey = KeyCode.LeftControl;
