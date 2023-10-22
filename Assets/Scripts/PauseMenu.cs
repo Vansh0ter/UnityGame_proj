@@ -41,7 +41,7 @@ public class PauseMenu : MonoBehaviour
     } 
     public void LoadMenu()
     {
-        Debug.Log("Loading menu...");
+        Debug.Log("Loading menu..."); // placeholder
     }
     public void QuitGame()
     {
