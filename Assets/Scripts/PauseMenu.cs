@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -39,13 +40,12 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = true;
         GameIsPaused = true;
     } 
-    public void LoadMenu()
-    {
-        Debug.Log("Loading menu..."); // placeholder
-    }
     public void QuitGame()
     {
-        Debug.Log("Quiting game...");
-        Application.Quit();
+        Debug.Log("Loading menu...");
+        SceneManager.LoadSceneAsync(0);
+        Time.timeScale = 1f;
+        PauseMenuUI.SetActive(false);
+        GameIsPaused = false;
     }
 }
