@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ladder
-  - Coin
+  - BG_MUSIC_VOLUME_SLIDER
+  - BG_MUSIC_CREATED
   layers:
   - Default
   - TransparentFX
