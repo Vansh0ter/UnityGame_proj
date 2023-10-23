@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Main
@@ -27,7 +28,7 @@ namespace Main
         [HideInInspector] public bool CanRunning = true;
         [SerializeField] private int coins;
         [SerializeField] private Text coinsText;
-
+        [SerializeField] private int coinsmax;
 
 
         [Space(20)]
@@ -137,6 +138,14 @@ namespace Main
                 coins++;
                 coinsText.text = coins.ToString();
                 Destroy(other.gameObject);
+            }
+            if (coins == coinsmax)
+            {
+                Destroy(other.gameObject);
+                SceneManager.LoadSceneAsync(2);
+                Debug.Log("You Won...");
+                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = true;
             }
         }
     }
