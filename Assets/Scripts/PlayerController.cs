@@ -139,6 +139,13 @@ namespace Main
                 coinsText.text = coins.ToString();
                 Destroy(other.gameObject);
             }
+            if (other.gameObject.tag == "Hostile")
+            {
+                SceneManager.LoadSceneAsync(3);
+                Debug.Log("You lost...");
+                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = true;
+            }
             if (coins == coinsmax)
             {
                 Destroy(other.gameObject);
