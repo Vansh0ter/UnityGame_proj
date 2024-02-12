@@ -10,6 +10,11 @@ Escape - Pause menu
 
 ## Contributing
 
+```
+echo $PATH
+```
+
+
 We welcome contributions from anyone who is interested in helping improve our game. If you'd like to contribute, there are a few ways to get involved:
 1. Fork this repository
 2. Install Unity game engine
